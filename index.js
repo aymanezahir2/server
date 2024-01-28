@@ -1,18 +1,19 @@
-import express from 'express';
-import * as dotenv from 'dotenv';
-import cors from 'cors';
-import connectDB from './src/mongodb/connect.js';
-import Route from './src/routes/route.js';
-import Routesss from './src/routes/send.js';
+const express = require('express')
 
-dotenv.config();
+const cors = require('cors');
+const connectDB = require( './mongodb/connect.js');
+const Route = require('./routes/route.js');
+const Routesss = require('./routes/send.js');
+
+const  {readdirSync}  = require('fs')
+require('dotenv').config()
 const app = express();
 app.use(cors());
 
 app.use(express.json({ limit: "50mb" }));
 app.use('/hello', Route);
 app.use('/send', Routesss);
-
+readdirSync("./routes").map((file)=>app.use("/",require("./routes/"+file)))
 app.get('/', (req, res) => {
     res.send("hello world");
 });

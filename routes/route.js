@@ -1,6 +1,5 @@
-import express from "express";
-import cosmitiCS from "../models/copu.js";
-import mongoose from "mongoose";
+const express = require('express')
+const cosmitiCS = require("../models/copu.js")
 const Route = express.Router();
 
 Route.route("/").get(async (r, s) => {
@@ -9,4 +8,4 @@ Route.route("/").get(async (r, s) => {
   s.json(cosmeticsData);
 });
 
-export default Route;
+module.exports = Route;

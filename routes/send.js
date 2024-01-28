@@ -1,6 +1,6 @@
-import express from "express";
-import CosmeticsArray from "../models/copu.js";
-import { v4 } from "uuid";
+const express = require('express')
+const CosmeticsArray = require("../models/copu.js")
+const { v4 } = require("uuid");
 const Route = express.Router();
 
 Route.route("/").post(async (r, s) => {
@@ -21,5 +21,4 @@ Route.route("/").post(async (r, s) => {
       console.log(error);
     }
 })
-
-export default Route;
+module.exports = Route;

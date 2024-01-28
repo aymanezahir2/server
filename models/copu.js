@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const cosmeticSchema = new Schema({
@@ -33,4 +33,4 @@ const cosmeticSchema = new Schema({
 
 const CosmeticsArray = mongoose.model('copy', cosmeticSchema, 'copy');
 
-export default CosmeticsArray
+module.exports = CosmeticsArray;
