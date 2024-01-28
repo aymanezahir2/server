@@ -1,9 +1,9 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
-import connectDB from './mongodb/connect.js';
-import Route from './routes/route.js';
-import Routesss from './routes/send.js';
+import connectDB from './src/mongodb/connect.js';
+import Route from './src/routes/route.js';
+import Routesss from './src/routes/send.js';
 
 dotenv.config();
 const app = express();
